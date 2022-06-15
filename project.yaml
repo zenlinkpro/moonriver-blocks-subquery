@@ -1,4 +1,4 @@
-specVersion: 1.0.0
+specVersion: 0.2.0
 description: Blocks
 repository: https://github.com/zenlinkpro/moonriver-blocks-subquery
 schema:
@@ -12,11 +12,6 @@ network:
 dataSources:
   - kind: substrate/Runtime
     startBlock: 790834
-    processor:
-      file: './node_modules/@subql/contract-processors/dist/moonbeam.js'
-      options:
-        abi: Factory
-        address: '0xf36AE63d89983E3aeA8AaaD1086C3280eb01438D'
     mapping:
       file: ./dist/index.js
       handlers:

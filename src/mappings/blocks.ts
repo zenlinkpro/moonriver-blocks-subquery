@@ -6,5 +6,5 @@ export async function handleBlock(block: SubstrateBlock): Promise<void> {
   const blockEntity = new Block(id);
   blockEntity.number = block.block.header.number.toBigInt();
   blockEntity.timestamp = BigInt( block.timestamp.toString());
-  blockEntity.save();
+  await blockEntity.save();
 }
