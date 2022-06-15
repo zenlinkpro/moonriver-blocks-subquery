@@ -1,0 +1,24 @@
+specVersion: 0.2.1
+description: Blocks
+repository: https://github.com/zenlinkpro/moonriver-blocks-subquery
+schema:
+  file: ./schema.graphql
+network:
+  genesisHash: '0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b'
+  endpoint: wss://moonriver.api.onfinality.io/public-ws
+  dictionary: "https://api.subquery.network/sq/subquery/moonriver-dictionary"
+  chaintypes:
+    file: "./types.yaml"
+dataSources:
+  - kind: substrate/Moonbeam
+    startBlock: 790834
+    processor:
+      file: './node_modules/@subql/contract-processors/dist/moonbeam.js'
+      options:
+        abi: Factory
+        address: '0xf36AE63d89983E3aeA8AaaD1086C3280eb01438D'
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleBlock
+          kind: substrate/BlockHandler

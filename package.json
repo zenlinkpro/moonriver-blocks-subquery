@@ -1,0 +1,32 @@
+{
+  "name": "blocks",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest",
+    "codegen": "./node_modules/.bin/subql codegen",
+    "prepare:moonriver": "mustache config/moonriver.json template.yaml > project.yaml"
+  },
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "Hayden0323",
+  "license": "MIT",
+  "devDependencies": {
+    "@polkadot/api": "^7",
+    "@subql/cli": "^1.0.1",
+    "@subql/types": "^1.1.0",
+    "@subql/node": "^1.1.2",
+    "@subql/contract-processors": "^0.5.4",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "ejs": "^3.1.6",
+    "handlebars": "^4.7.7",
+    "mustache": "^4.2.0",
+    "typescript": "^4.6.2"
+  }
+}
