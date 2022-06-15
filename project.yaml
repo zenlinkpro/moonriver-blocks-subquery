@@ -1,5 +1,7 @@
 specVersion: 0.2.0
-description: Blocks
+name: moonriver-blocks-subquery
+version: 1.0.0
+description: This project can be use as a starting point for moonriver network.
 repository: https://github.com/zenlinkpro/moonriver-blocks-subquery
 schema:
   file: ./schema.graphql
