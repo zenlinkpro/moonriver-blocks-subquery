@@ -6,8 +6,7 @@
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
     "test": "jest",
-    "codegen": "./node_modules/.bin/subql codegen",
-    "prepare:moonriver": "mustache config/moonriver.json template.yaml > project.yaml"
+    "codegen": "./node_modules/.bin/subql codegen"
   },
   "files": [
     "dist",
@@ -16,6 +15,9 @@
   ],
   "author": "Hayden0323",
   "license": "MIT",
+  "resolutions": {
+    "ipfs-unixfs": "6.0.6"
+  },
   "devDependencies": {
     "@polkadot/api": "^7",
     "@subql/cli": "^1.0.1",
