@@ -6,7 +6,9 @@
     "build": "tsc -b",
     "prepack": "rm -rf dist && yarn build",
     "test": "jest",
-    "codegen": "./node_modules/.bin/subql codegen"
+    "codegen": "./node_modules/.bin/subql codegen",
+    "deploy:moonriver": "subql publish -f moonriver.yaml",
+    "deploy:moonbeam": "subql publish -f moonbeam.yaml"
   },
   "files": [
     "dist",
