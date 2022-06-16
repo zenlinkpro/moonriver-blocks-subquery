@@ -1,10 +1,10 @@
 {
-  "name": "blocks",
+  "name": "zenlink-blocks-subquery",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -b",
-    "prepack": "rm -rf dist && npm build",
+    "prepack": "rm -rf dist && yarn build",
     "test": "jest",
     "codegen": "./node_modules/.bin/subql codegen"
   },
@@ -16,22 +16,24 @@
   "author": "Hayden0323",
   "license": "MIT",
   "resolutions": {
+    "@polkadot/api": "^7.12.1",
+    "@polkadot/types": "^7.12.1",
+    "@polkadot/util": "^8.5.1",
     "ipfs-unixfs": "6.0.6"
   },
-  "dependencies": {
-    "moonbeam-types-bundle": "^2.0.3"
-  },
   "devDependencies": {
-    "@polkadot/api": "^7",
-    "@subql/cli": "^1.0.1",
-    "@subql/types": "^1.1.0",
+    "@polkadot/api": "^7.12.1",
+    "@subql/cli": "latest",
+    "@subql/types": "latest",
     "@subql/node": "^1.1.2",
     "@subql/contract-processors": "^0.5.4",
-    "@typescript-eslint/eslint-plugin": "^4.0.0",
-    "@typescript-eslint/parser": "^4.0.0",
     "ejs": "^3.1.6",
     "handlebars": "^4.7.7",
     "mustache": "^4.2.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "moonbeam-types-bundle": "^2.0.3"
+  },
+  "exports": {
+    "chaintypes": "./src/chaintypes.ts"
   }
 }
